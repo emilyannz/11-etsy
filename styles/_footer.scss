@@ -1,33 +1,113 @@
-.email-subscribe {
-  margin: auto;
-  width: 70rem;
+
+.footer {
+  width: 100%;
+  min-height: 85vh;
+  border-top: lighten($brand-gray, 50%) solid 1px;
+
+  & a {
+    color: $brand-light-blue;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.subscribe {
+  width: 100%;
+  margin: $gutter * 2 0;
+  padding: $gutter * 3;
+  border: lighten($brand-tan, 12%) solid 8px;
+  border-radius: $brand-border-radius;
+
+  &-heading {
+    margin: 0;
+    margin-bottom: $gutter;
+    font-family: serif;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+.subscribe-form {
+  text-align: center;
+
+  &__input {
+    width: 20rem;
+    margin-right: $gutter;
+    padding: $gutter;
+    border: lighten($brand-gray, 40%) solid 1px;
+    border-radius: $brand-border-radius;
+    font-size: 1rem;
+    font-weight: 100;
+  }
+
+  &__button {
+    padding: $gutter;
+    border: $brand-light-gray solid 1px;
+    border-radius: $brand-border-radius;
+    background: $brand-light-blue;
+    color: $brand-white;
+    font-size: 1rem;
+  }
+}
+
+.footer-row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: .5rem solid rgba(0, 0, 0, .05);
-}
-
-.email-subscribe {
+  width: 100%;
   margin: $gutter;
-  font-size: 1rem;
+  padding-bottom: $gutter * 4;
+  border-bottom: lighten($brand-gray, 50%) solid 1px;
 }
 
-.email-subscribe__calltoaction {
-  position: relative;
-  width: 45%;
-  padding: $gutter;
+.footer__link {
+
+  &-heading {
+    margin: $gutter;
+    color: $brand-gray;
+    font-size: 0.95rem;
+    font-weight: 100;
+  }
+
+  &-button {
+    margin: 0 $gutter;
+    margin-bottom: $gutter * 2;
+    padding: $gutter / 2 $gutter;
+    border: $brand-light-gray solid 1px;
+    border-radius: $brand-border-radius;
+    background: $brand-light-blue;
+    color: $brand-white;
+    font-size: 1rem;
+  }
+
+  &-item {
+    margin: $gutter;
+    font-size: 0.95rem;
+    font-weight: 100;
+  }
 }
 
-.enter-email {
-  width: 60%;
+.footer-col {
+  width: calc(100% / 5);
 }
 
-.subscribe-btn {
-  width: 30%;
-  height: 2.2rem;
-  background: $brand-light-blue;
-  color: $brand-white;
-  position: absolute;
-  bottom: 17%;
-  right: 7%;
+.footer-page-options {
+
+  &__button {
+    padding: $gutter;
+    border: lighten($brand-gray, 40%) solid 1px;
+
+    &--icon {
+      margin: -0.3rem $gutter / 2;
+      font-size: 1.2rem;
+    }
+
+    &--text {
+      margin: 0;
+      color: $brand-gray;
+      font-size: 0.9rem;
+      font-weight: 100;
+    }
+  }
 }
