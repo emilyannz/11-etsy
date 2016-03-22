@@ -3,22 +3,24 @@
   border-bottom: lighten($brand-tan, 10%) solid 0.1rem;
   border-top: lighten($brand-tan, 10%) solid 0.1rem;
   background: $brand-white;
-
 }
 
-.cat-nav {
+.categories-nav {
   display: flex;
   font-size: 0.9rem;
   color: $brand-gray;
   text-decoration: none;
   font-weight: normal;
 
-
   &__item {
     margin: 0 $gutter;
   }
 
+    & :hover {
+      cursor: pointer;
+    }
+  }
+
   &__item-text {
     margin: 0;
-  }
 }

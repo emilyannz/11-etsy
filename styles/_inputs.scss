@@ -1,13 +1,9 @@
 input {
   padding: ($gutter / 2) $gutter;
-
   border: $brand-tan solid 0.1rem;
   border-radius: $brand-border-radius;
-
   background: $brand-light-tan;
-
   font-size: 1.2rem;
-
   box-shadow: $inset-shadow;
 }
 
@@ -16,7 +12,6 @@ input {
 
   &__input {
     border-right: 0;
-
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
@@ -26,7 +21,6 @@ input {
     border: 0;
     border-top-right-radius: $brand-border-radius;
     border-bottom-right-radius: $brand-border-radius;
-
     background: $brand-light-blue;
     color: $brand-white;
     font-size: 1rem;

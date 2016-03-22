@@ -9,9 +9,7 @@
 
   &__logo {
     margin: 0;
-
     color: $brand-primary;
-
     font-family: $brand-serif;
     font-size: 3rem;
     font-weight: normal;
@@ -19,7 +17,6 @@
 
   &__search {
     flex-grow: 1;
-
     margin-left: $gutter * 2;
   }
 }
@@ -31,7 +28,6 @@
   &__item {
     margin: 0 $gutter;
     padding: $gutter;
-
     color: $brand-light-blue;
 
     &--btn {
@@ -41,7 +37,6 @@
 
     &--cart {
       border-left: $brand-light-gray solid 0.1rem;
-
       color: $brand-gray;
     }
   }
