@@ -1,20 +1,24 @@
+
 .categories {
-   border-bottom: lighten($brand-tan, 10%) solid 0.1rem;
-   border-top: lighten($brand-tan, 10%) solid 0.1rem;
-   background: $brand-white;
- }
+  border-bottom: lighten($brand-tan, 10%) solid 0.1rem;
+  border-top: lighten($brand-tan, 10%) solid 0.1rem;
+  background: $brand-white;
 
- .category-nav {
-   display: flex;
-   color: $brand-gray;
-   text-decoration: none;
-   font-weight: normal;
+}
 
-   &__item {
-     margin: 0 $gutter;
-   }
+.cat-nav {
+  display: flex;
+  font-size: 0.9rem;
+  color: $brand-gray;
+  text-decoration: none;
+  font-weight: normal;
 
-   &__item-text {
-     margin: 0;
-   }
- }
+
+  &__item {
+    margin: 0 $gutter;
+  }
+
+  &__item-text {
+    margin: 0;
+  }
+}
