@@ -13,7 +13,6 @@
  *     (You will need more wrapping elements to style things)
  */
 function createResultShopItem(result) {
-  // debugger;
   const shopitem = document.createElement(`article`);
   shopitem.classList.add(`shop-item`);
   shopitem.innerHTML =
@@ -30,7 +29,6 @@ function createResultShopItem(result) {
   </div>
   </div>`;
 
-
   return shopitem;
 }
 
@@ -45,10 +43,13 @@ function createResultShopItem(result) {
  * @return undefined
  */
 function showAllResults(response) {
+
   // Get the products element from the DOM
   const products = document.querySelector(`#products`);
+
   // Clear the contents of the products element
   products.innerHTML = ``;
+
   // Set 'items' to the results array from the response
   let items = 2; // 2 is only here to stop an error
   items = response.results;
@@ -79,10 +80,11 @@ function searchEtsy(searchTerm, getData = fetchEtsy) {
  */
 function start() {
   searchEtsy(`Yoshi`);
+
   // Lookup the search bar button element
   const button = document.querySelector(`.input-addon__btn`);
-  // Listen for click on search button
-  // When clicked
+
+  // Listen for click on search button When clicked
   //   * Look up value for search bar input
   //   * Lookup results for search term and render results to the DOM
   button.addEventListener(`click`, () => {
@@ -93,7 +95,6 @@ function start() {
     inputLength.innerHTML = `<span class = "fa fa-circle-o-notch fa-spin"></span>`;
 
     return searchEtsy(input).then(() => {
-
       const totalproducts = document.querySelectorAll(`.shop-item`).length;
       inputResult.innerText = `"${input}"`;
       inputLength.innerText = `(${totalproducts} Results)`;
