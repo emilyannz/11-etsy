@@ -15,93 +15,102 @@
 function createResultShopItem(result) {
   const shopitem = document.createElement(`article`);
   shopitem.classList.add(`shop-item`);
-  shopitem.innerHTML = < div class = "shop-item__card" > < /div> < div class = "shop-item__img" > < /div > < img class = "shop-item__pic"
-  src = "${result.Images[0].url_fullxfull}"
-  alt = "${result.title}" >
+  shopitem.innerHTML =
+    `<div class="shop-item__card">
+     <div class="shop-item__image-area">
+      <image class="shop-item__pic" src="${result.Images[0].url_fullxfull}" alt="${result.title}">
+      </image>
+    </div>
 
-    < div class = "card-content" >
-    < h3 class = "shop-item__title" > $ {
-      result.title
-    } < /h3> < div class = "card-content__desc" > < h4 class = "shop-item__shop-name" > $ {
-      result.Shop.shop_name
-    } < /h4> < p class = "shop-item__price" > $$ {
-  result.price
-} < /p> < /div > < /div>;
+  <div class="shop-item__img">
+  <image class="shop-item__pic">
+  src="${result.Images[0].url_fullxfull}"
+  alt="${result.title}" </image>
 
-return shopitem;
-}
+  <div class="card-content">
+    <h3 class="shop-item__title"> ${result.title}</h3>
+    </div>
 
-/**
- * Takes a full result payload object and renders it to the DOM
- * @param  Object response Data from Etsy or source
- *   Format is {
- *     results: [
- *       // Array of objects that follow the format `docs/shop-item.json`
- *     ]
- *   }
- * @return undefined
- */
+        <div class="card-content__description">
+        <h4 class="shop-item__shop-name">${result.Shop.shop_name}</h4>
+        <p class="shop-item__price">$${result.price}</p>
+        </div>
+        </div>;
 
-function showAllResults(response) {
-  // Get the products element from the DOM
-  const products = document.querySelector(`#products`);
-  // Clear the contents of the products element
-  products.innerHTML = ``;
-  // Set 'items' to the results array from the response
-  let items = 2; // 2 is only here to stop an error
-  const newItem = response.results;
-  for (let i = 0; i < items.length; i++) {
-    // Create a new shop item element for each item in items
-    const item = createResultShopItem(newItem[i]);
-    // Append current shop item element to the products element
-    products.appendChild(newItemElement);
+      return shopitem;
+    }
+
+  /**
+   * Takes a full result payload object and renders it to the DOM
+   * @param  Object response Data from Etsy or source
+   *   Format is {
+   *     results: [
+   *       // Array of objects that follow the format `docs/shop-item.json`
+   *     ]
+   *   }
+   * @return undefined
+   */
+
+  function showAllResults(response) {
+    // Get the products element from the DOM
+    const products = document.querySelector(`#products`);
+    // Clear the contents of the products element
+    products.innerHTML = ``;
+    // Set 'items' to the results array from the response
+    let items = 2; // 2 is only here to stop an error
+    const newItem = response.results;
+    for (let i = 0; i < items.length; i++) {
+      // Create a new shop item element for each item in items
+      const item = createResultShopItem(newItem[i]);
+      // Append current shop item element to the products element
+      products.appendChild(newItemElement);
+    }
+    return;
   }
-  return;
-}
 
-/**
- * Function should look up a searchTerm using the `getData` function
- *   and then render the results to the DOM
- * @param  String searchTerm
- * @param  Function getData
- *   Looks up data given an argument 'searchTerm' and returns a promise when complete
- * @return undefined
- */
-function searchEtsy(searchTerm, getData = fetchEtsy) {
-  return getData(searchTerm).then((results) => {
-    showAllResults(results);
-  });
-}
-
-/**
- * Tells the app when to start & connects the application to the DOM
- */
-function start() {
-  searchEtsy(`Yoshi`);
-
-  // Lookup the search bar button element
-  const button = document.querySelector(`.input-addon__btn`);
-
-  // Listen for click on search button When clicked
-  //   * Look up value for search bar input
-  //   * Lookup results for search term and render results to the DOM
-  button.addEventListener(`click`, () => {
-    const searchValue = documentquerySelector(`.input-addon__input`).value;
-
-
-    return searchEtsy(searccValue).then(() => {
-      const input = document.querySelector(`.input`);
-      const inputLength = document.querySelector(`.input__length`);
-      const inputResult = document.querySelector(`.shop-item`).length;
-      input.innerText = `"${searchValue}"`;
+  /**
+   * Function should look up a searchTerm using the `getData` function
+   *   and then render the results to the DOM
+   * @param  String searchTerm
+   * @param  Function getData
+   *   Looks up data given an argument 'searchTerm' and returns a promise when complete
+   * @return undefined
+   */
+  function searchEtsy(searchTerm, getData = fetchEtsy) {
+    return getData(searchTerm).then((results) => {
+      showAllResults(results);
     });
-  });
-}
+  }
 
-    return searchEtsy(input).then(() => {
-      const totalproducts = document.querySelectorAll(`.shop-item`).length;
-      inputResult.innerText = `"${input}"`;
-      inputLength.innerText = `(${totalproducts} Results)`;
-});
+  /**
+   * Tells the app when to start & connects the application to the DOM
+   */
+  function start() {
+    searchEtsy(`Yoshi`);
+
+    // Lookup the search bar button element
+    const button = document.querySelector(`.input-addon__btn`);
+
+    // Listen for click on search button When clicked
+    //   * Look up value for search bar input
+    //   * Lookup results for search term and render results to the DOM
+    button.addEventListener(`click`, () => {
+      const searchValue = documentquerySelector(`.input-addon__input`).value;
+
+
+      return searchEtsy(searccValue).then(() => {
+        const input = document.querySelector(`.input`);
+        const inputLength = document.querySelector(`.input__length`);
+        const inputResult = document.querySelector(`.shop-item`).length;
+        input.innerText = `"${searchValue}"`;
+      });
+    });
+  }
+
+  return searchEtsy(input).then(() => {
+    const totalproducts = document.querySelectorAll(`.shop-item`).length;
+    inputResult.innerText = `"${input}"`;
+    inputLength.innerText = `(${totalproducts} Results)`;
+  });
 });
 }
