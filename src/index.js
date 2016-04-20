@@ -12,30 +12,23 @@
  *   See basic HTML format `docs/shop-item.html`
  *     (You will need more wrapping elements to style things)
  */
+
 function createResultShopItem(result) {
   const shopitem = document.createElement(`article`);
   shopitem.classList.add(`shop-item`);
   shopitem.innerHTML =
     `<div class="shop-item__card">
-     <div class="shop-item__image-area">
-      <image class="shop-item__pic" src="${result.Images[0].url_fullxfull}" alt="${result.title}">
-      </image>
+    <image class="shop-item__pic" src="${result.Images[0].url_fullxfull}" alt="${result.title}">
     </div>
-
-  <div class="shop-item__img">
-  <image class="shop-item__pic">
-  src="${result.Images[0].url_fullxfull}"
-  alt="${result.title}" </image>
-
-  <div class="card-content">
-    <h3 class="shop-item__title"> ${result.title}</h3>
-    </div>
-
-        <div class="card-content__description">
-        <h4 class="shop-item__shop-name">${result.Shop.shop_name}</h4>
-        <p class="shop-item__price">$${result.price}</p>
-        </div>
-        </div>;
+  <div class="shop-card__content">
+  <div class="shop-card__content--heading">
+    <h3 class="shop-card__title">${result.title}</h3>
+  </div>
+  <div class="shop-card__content--details">
+    <h3 class="shop-card__shop-name">${result.Shop.shop_name}</h3>
+    <p class="shop-card__price">${result.price}</p>
+  </div>
+  </div>`;
 
       return shopitem;
     }
@@ -50,18 +43,17 @@ function createResultShopItem(result) {
    *   }
    * @return undefined
    */
-
-  function showAllResults(response) {
+    function showAllResults(response) {
     // Get the products element from the DOM
     const products = document.querySelector(`#products`);
     // Clear the contents of the products element
     products.innerHTML = ``;
     // Set 'items' to the results array from the response
-    let items = 2; // 2 is only here to stop an error
-    const newItem = response.results;
+    // let items = 2; // 2 is only here to stop an error
+    const items = response.results;
     for (let i = 0; i < items.length; i++) {
       // Create a new shop item element for each item in items
-      const item = createResultShopItem(newItem[i]);
+      const newItem = createResultShopItem(newItem[i]);
       // Append current shop item element to the products element
       products.appendChild(newItemElement);
     }
@@ -98,11 +90,12 @@ function createResultShopItem(result) {
       const searchValue = documentquerySelector(`.input-addon__input`).value;
 
 
-      return searchEtsy(searccValue).then(() => {
+      return searchEtsy(searchValue).then(() => {
         const input = document.querySelector(`.input`);
         const inputLength = document.querySelector(`.input__length`);
         const inputResult = document.querySelector(`.shop-item`).length;
         input.innerText = `"${searchValue}"`;
+        inputLength.innerText = `(${numProducts} items)`;
       });
     });
   }
