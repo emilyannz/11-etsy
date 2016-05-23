@@ -1,27 +1,27 @@
-.block__heading {
-  margin: $gutter;
-}
-
-.block-one {
-  width: 100%;
-  margin: $gutter 0;
-  border: 1px solid $brand-light-gray;
-  background: $brand-white;
-
-  &__list {
-    padding: 0 $gutter;
-  }
-
-  &__list-item {
-    padding: 0.2rem 1rem;
-    color: $brand-light-blue;
-    cursor: pointer;
-
-    &:first-of-type {
-      padding: 0.1rem 0;
-      color: $brand-black;
-      font-weight: 600;
-      cursor: default;
-    }
-  }
-}
+// .block__heading {
+//   margin: $gutter;
+// }
+//
+// .block-one {
+//   width: 100%;
+//   margin: $gutter 0;
+//   border: 1px solid $brand-light-gray;
+//   background: $brand-white;
+//
+//   &__list {
+//     padding: 0 $gutter;
+//   }
+//
+//   &__list-item {
+//     padding: 0.2rem 1rem;
+//     color: $brand-light-blue;
+//     cursor: pointer;
+//
+//     &:first-of-type {
+//       padding: 0.1rem 0;
+//       color: $brand-black;
+//       font-weight: 600;
+//       cursor: default;
+//     }
+//   }
+// }
