@@ -4,20 +4,17 @@ html {
 
 body {
   min-height: 100vh;
-  margin: 0;
-  background: $brand-background;
-  font-family: $brand-sans-serif;
-}
 
-.sub-main {
-  display: flex;
-  max-width: 70rem;
-  margin: auto;
-  margin-top: 1.6rem;
+  margin: 0;
+
+  background: $brand-background;
+
+  font-family: $brand-sans-serif;
 }
 
 
 ul {
   padding-left: 0;
+
   list-style: none;
 }

@@ -52,8 +52,9 @@ function showAllResults(response) {
   // let items = 2; // 2 is only here to stop an error
   const items = response.results;
   for (let i = 0; i < items.length; i++) {
+    const newItem = items[i];
     // Create a new shop item element for each item in items
-    const newItem = createResultShopItem(newItem[i]);
+    const newItemElement = createResultShopItem(newItem);
     // Append current shop item element to the products element
     products.appendChild(newItemElement);
   }
@@ -98,10 +99,11 @@ function start() {
       inputLength.innerText = `(${numProducts} items)`;
     });
   });
-
-  searchEtsy(input).then(() => {
-    const totalproducts = document.querySelectorAll(`.shop-item`).length;
-    inputResult.innerText = `"${input}"`;
-    inputLength.innerText = `(${totalproducts} Results)`;
-  });
 }
+
+//   searchEtsy(input).then(() => {
+//     const totalproducts = document.querySelectorAll(`.shop-item`).length;
+//     inputResult.innerText = `"${input}"`;
+//     inputLength.innerText = `(${totalproducts} Results)`;
+//   });
+// }
