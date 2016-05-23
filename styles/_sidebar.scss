@@ -1,4 +1,4 @@
-.side-bar {
+.sidebar {
   width: 18rem;
   font-size: 1rem;
 
@@ -76,11 +76,11 @@
   }
 }
 
-.refine__color {
+.filter-colors {
   display: flex;
   margin: 0 $gutter;
 
-  &-box {
+  &__btn {
     width: 1.6rem;
     height: 1.6rem;
     margin: 0 $gutter / 4;
