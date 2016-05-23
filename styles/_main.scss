@@ -3,28 +3,37 @@
   max-width: 52rem;
   margin: auto;
   font-size: 1rem;
-
   & a {
     text-decoration: none;
-
     &:hover {
       text-decoration: underline;
     }
   }
 }
-
 .main-nav {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-left: $gutter * 2;
 
-  &__left {
-    color: lighten($brand-gray, 30%);
-    font-size: 1rem;
+  &__link {
+    color: $brand-light-blue;
+    font-weight: normal;
 
-    &__input {
-
+    &--arrow {
+      color: lighten($brand-gray, 35%);
+      font-size: 1rem;
     }
   }
+
+  &__input {
+    font-weight: normal;
+  }
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 $gutter;
 }
