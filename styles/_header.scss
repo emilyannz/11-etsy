@@ -1,1 +1,19 @@
 @import 'header/top-nav';
+
+.top-nav__bottom-row {
+  border-top: lighten($brand-tan, 10%) solid 0.1rem;
+}
+
+.categories-nav {
+  disply: flex;
+}
+
+.categories-nav__item {
+  margin: 0 $gutter;
+  color: $brand-gray;
+  font-size: 1rem;
+
+  &first-of-type {
+    margin-left: 0;
+  }
+}

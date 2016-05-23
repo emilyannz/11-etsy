@@ -1,0 +1,149 @@
+.sidebar {
+  width: 18rem;
+  font-size: 1rem;
+
+  & a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.sidebar-section {
+  margin-bottom: 2rem;
+  padding: 0 $gutter;
+  border: lighten($brand-tan, 10%) solid 0.1rem;
+  border-radius: $brand-border-radius;
+  background: $brand-white;
+  box-shadow: 0 0.5px 0 lighten($brand-black, 80%);
+
+  &__title {
+    margin: $gutter / 2 $gutter;
+    margin-top: $gutter * 2;
+  }
+}
+
+.sidebar-section__results {
+  margin: 0 $gutter;
+
+  &-list--item {
+    margin: $gutter;
+    color: $brand-light-blue;
+  }
+}
+
+.sidebar-section__options {
+  padding-bottom: $gutter * 2;
+  border-bottom: $brand-light-gray solid 0.1rem;
+
+  // &:last-of-type {
+  //   border-bottom: 0;
+  // }
+
+.item-type__list{
+  margin: 0 $gutter;
+}
+  &-type {
+    color: $brand-light-blue;
+
+    &--item {
+      margin: $gutter / 2 $gutter;
+    }
+  }
+}
+
+.radio-active {
+  color: $brand-black;
+  font-weight: bold;
+}
+
+.price-input-text {
+  max-width: 5rem;
+  height: 2.6rem;
+  margin: $gutter;
+  padding: $gutter;
+  font-size: 1rem;
+
+  &--btn {
+    height: 2.6rem;
+    padding: $gutter - 0.3 $gutter * 1.5;
+    border: lighten($brand-gray, 40%) solid 0.2rem;
+    border-radius: $brand-border-radius;
+    background: $brand-white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+}
+
+.filter-colors {
+  display: flex;
+  margin: 0 $gutter;
+
+  &__btn {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0 $gutter / 4;
+    border: lighten($brand-gray, 45%) solid 0.1rem;
+    border-radius: $brand-border-radius;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &--red {
+      background: #ff0000;
+    }
+
+    &--orange {
+      background: #ffb800;
+    }
+
+    &--yellow {
+      background: #f2ff00;
+    }
+
+    &--green {
+      background: #00de10;
+    }
+
+    &--blue {
+      background: #33c2ff;
+    }
+
+    &--purple {
+      background: #9955fc;
+    }
+
+    &--black {
+      background: #000000;
+    }
+
+    &--white {
+      background: #ffffff;
+    }
+  }
+}
+
+.select-dropdown {
+  width: 15.6rem;
+  padding: $gutter;
+  border-radius: $brand-border-radius;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+label {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    top: 0.3rem;
+    right: 1.4rem;
+    color: $brand-gray;
+    font-family: 'FontAwesome';
+    content: '\f0d7';
+    pointer-events: none;
+  }
+}

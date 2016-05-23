@@ -1,14 +1,12 @@
 input {
-  padding: ($gutter / 2) $gutter;
-
-  border: $brand-tan solid 0.1rem;
-  border-radius: $brand-border-radius;
-
-  background: $brand-light-tan;
-
-  font-size: 1.2rem;
-
-  box-shadow: $inset-shadow;
+  &[type=text] {
+    padding: ($gutter / 2) $gutter;
+    border: $brand-tan solid 0.1rem;
+    border-radius: $brand-border-radius;
+    background: $brand-light-tan;
+    font-size: 1.2rem;
+    box-shadow: $inset-shadow;
+  }
 }
 
 .input-addon {

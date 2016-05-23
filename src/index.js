@@ -12,8 +12,25 @@
  *   See basic HTML format `docs/shop-item.html`
  *     (You will need more wrapping elements to style things)
  */
-function createResultShopItem(result) {
 
+function createResultShopItem(result) {
+  const shopitem = document.createElement(`article`);
+  shopitem.classList.add(`shop-item`);
+  shopitem.innerHTML =
+    `<div class="shop-item__card">
+    <image class="shop-item__pic" src="${result.Images[0].url_fullxfull}" alt="${result.title}">
+    </div>
+  <div class="shop-card__content">
+  <div class="shop-card__content--heading">
+    <h3 class="shop-card__title">${result.title}</h3>
+  </div>
+  <div class="shop-card__content--details">
+    <h3 class="shop-card__shop-name">${result.Shop.shop_name}</h3>
+    <p class="shop-card__price">${result.price}</p>
+  </div>
+  </div>`;
+
+  return shopitem;
 }
 
 /**
@@ -28,17 +45,20 @@ function createResultShopItem(result) {
  */
 function showAllResults(response) {
   // Get the products element from the DOM
-
+  const products = document.querySelector(`#products`);
   // Clear the contents of the products element
-
+  products.innerHTML = ``;
   // Set 'items' to the results array from the response
-  const items = 2; // 2 is only here to stop an error
-
+  // let items = 2; // 2 is only here to stop an error
+  const items = response.results;
   for (let i = 0; i < items.length; i++) {
+    const newItem = items[i];
     // Create a new shop item element for each item in items
-
+    const newItemElement = createResultShopItem(newItem);
     // Append current shop item element to the products element
+    products.appendChild(newItemElement);
   }
+  return;
 }
 
 /**
@@ -54,3 +74,36 @@ function searchEtsy(searchTerm, getData = fetchEtsy) {
     showAllResults(results);
   });
 }
+
+/**
+ * Tells the app when to start & connects the application to the DOM
+ */
+function start() {
+  searchEtsy(`Yoshi`);
+
+  // Lookup the search bar button element
+  const button = document.querySelector(`.input-addon__btn`);
+
+  // Listen for click on search button When clicked
+  //   * Look up value for search bar input
+  //   * Lookup results for search term and render results to the DOM
+  button.addEventListener(`click`, () => {
+    const searchValue = documentquerySelector(`.input-addon__input`).value;
+
+
+    return searchEtsy(searchValue).then(() => {
+      const input = document.querySelector(`.input`);
+      const inputLength = document.querySelector(`.input__length`);
+      const inputResult = document.querySelector(`.shop-item`).length;
+      input.innerText = `"${searchValue}"`;
+      inputLength.innerText = `(${numProducts} items)`;
+    });
+  });
+}
+
+//   searchEtsy(input).then(() => {
+//     const totalproducts = document.querySelectorAll(`.shop-item`).length;
+//     inputResult.innerText = `"${input}"`;
+//     inputLength.innerText = `(${totalproducts} Results)`;
+//   });
+// }

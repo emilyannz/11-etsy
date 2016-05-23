@@ -1,6 +1,11 @@
 .container {
   width: 100%;
-  max-width: 70rem;
 
+  max-width: 80rem;
   margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }

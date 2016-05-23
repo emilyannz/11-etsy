@@ -1,57 +1,394 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>11-etsy</title>
-  <link rel="stylesheet" href="/app.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <title>Emily's Etsy Page</title>
+    <link rel="stylesheet" href="/app.css">
+  </head>
+  <body>
 
-  <header class="site-header">
-    <nav class="top-nav">
-      <div class="container">
-        <div class="top-nav__row">
-          <h1 class="top-nav__logo">Etsy</h1>
-          <div class="top-nav__search">
-            <div class="input-addon">
-              <input type="text" class="input-addon__input" value="Yoshi">
-              <button class="input-addon__btn">Search</button>
+    <header class="site-header">
+      <nav class="top-nav">
+        <div class="container">
+          <div class="top-nav__row">
+            <h1 class="top-nav__logo">Etsy</h1>
+            <div class="top-nav__search">
+              <div class="input-addon">
+                <input type="text" class="input-addon__input" value="Yoshi">
+                <button class="input-addon__btn">Search</button>
+              </div>
+            </div>
+
+            <div class="top-nav__right">
+              <ul class="user-nav">
+                <li class="user-nav__item">
+                  <a class="user-nav__link" href="#sell">Sell on Etsy</a>
+                </li>
+                <li class="user-nav__item">
+                  <a class="user-nav__link" href="#register">Register</a>
+                </li>
+                <li class="user-nav__item user-nav__item--btn">
+                  <a class="user-nav__link" href="#login">Sign In</a>
+                </li>
+                <li class="user-nav__item user-nav__item--cart">
+                  <a class="user-nav__link" href="#login">
+                    <span class="cart-stack">
+                      <span class="cart-stack__icon fa fa-cart-plus"></span>
+                      Cart
+                    </span>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <div class="top-nav__right">
-            <ul class="user-nav">
-              <li class="user-nav__item">
-                <a class="user-nav__link" href="#sell">Sell on Etsy</a>
+          <div class="top-nav__bottom-row">
+            <div class="categories-nav">
+            <li class="categories-nav__item">
+              <a class="user-nav__link">Clothing & Accessories</a>
+            </li>
+            <li class="categories-nav__item">
+              <a class="user-nav__link">Jewelry</a>
+            </li>
+            <li class="categories-nav__item">
+              <a class="user-nav__link">Craft Supplies & Tools</a>
+            </li>
+            <li class="categories-nav__item">
+              <a class="user-nav__link">Weddings</a>
+            </li>
+            <li class="categories-nav__item">
+              <a class="user-nav__link">Entertainment</a>
+            </li>
+            <li class="categories-nav__item">
+              <a class="user-nav__link">Home & Living</a>
+            </li>
+            <li class="categories-nav__item">
+              <a class="user-nav__link">Kids & Baby</a>
+            </li>
+            <li class="categories-nav__item">
+              <a class="user-nav__link">Vintage</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="sidebar">
+          <div class="sidebar__results">
+            <h4 class="sidebar__title">Show results for:</h4>
+            <div class="sidebar-section">
+              <h4 class="sidebar-section__title">All categories</h4>
+              <div class="sidebar-section__results">
+                <div class="sidebar-section__results-list">
+                <li class="sidebar-section__results-list--item">
+                  <a class="user-nav__link" href="#">Home & Living</a>
+                </li>
+                <li class="sidebar-section__results-list--item">
+                  <a class="user-nav__link" href="#">Paper & Party Supplies</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h4 class="sidebar__title">Refine your search</h4>
+          <div class="sidebar-section">
+            <div class="sidebar-section__options">
+            <h4 class="sidebar-section__title">Item Type</h4>
+            <ul class="item-type__list">
+              <li class="item-type__list-item">
+                <input type="radio">
+                <label class="item-type__list-item radio-active">All items</label>
               </li>
-              <li class="user-nav__item">
-                <a class="user-nav__link" href="#register">Register</a>
+              <li class="item-type__list-item">
+                <input type="radio">
+                <label class="item-type__list-item radio-active">Handmade</label>
               </li>
-              <li class="user-nav__item user-nav__item--btn">
-                <a class="user-nav__link" href="#login">Sign In</a>
-              </li>
-              <li class="user-nav__item user-nav__item--cart">
-                <a class="user-nav__link" href="#login">
-                  <span class="cart-stack">
-                    <span class="cart-stack__icon fa fa-cart-plus"></span>
-                    Cart
-                  </span>
-                </a>
+              <li class="item-type__list-item">
+                <input type="radio">
+                <label class="item-type__list-item radio-active">Vintage</label>
               </li>
             </ul>
           </div>
-        </div>
-      </div>
-    </nav>
-  </header>
 
-  <div id="products"></div>
+            <div class="sidebar-section__options">
+            <h4 class="sidebar-section__title">Price($):</h4>
+              <div class="sidebar-section__price">
+                <input type="text" placeholder="Low" class="price-input">
+                <p class="price-input-text">to</p>
+                <input type="text" placeholder="High" class="price-input">
+                <button class="price-input--btn submit">
+                  <i class="fa fa-caret-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="sidebar-section__options">
+            <h4 class="sidebar-section__title">Filter by Color:</h4>
+              <div class="filter-colors">
+                <button class="filter-colors__btn filter-colors__btn--red"></button>
+                <button class="filter-colors__btn filter-colors__btn--orange"></button>
+                <button class="filter-colors__btn filter-colors__btn--yellow"></button>
+                <button class="filter-colors__btn filter-colors__btn--green"></button>
+                <button class="filter-colors__btn filter-colors__btn--blue"></button>
+                <button class="filter-colors__btn filter-colors__btn--purple"></button>
+                <button class="filter-colors__btn filter-colors__btn--black"></button>
+                <button class="filter-colors__btn filter-colors__btn--white"></button>
+              </div>
+            </div>
+
+            <div class="sidebar-section__options">
+              <h4 class="sidebar-section__title">Ordering Options</h4>
+              <ul class="ordering-options__list">
+                <li class="ordering-options__list-item">
+                  <input type="checkbox">
+                  <label class="ordering-options__checkbox">Accepts Etsy gift cards</label>
+                </li>
+                <li class="ordering-options__list-item">
+                  <input type="checkbox">
+                  <label class="ordering-options__checkbox">Customizable</label>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar-section__options">
+            <h4 class="sidebar-section__title">Shop Location</h4>
+              <ul class="shop-location__list">
+                <li class="shop-location__list-item">
+                  <input type="radio">
+                  <label class="shop-location__list-item--btn">Anywhere</label>
+                </li>
+                <li class="shop-location__list-item">
+                  <input type="radio">
+                  <label class="shop-location__list-item--btn">United States</label>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar-section__options">
+            <h4 class="sidebar-section__title">Ship To:</h4>
+                <span class="fa fa-caret-down ship-carat"></span>
+                <select class="ship-to-dropdown">
+                  <option value="United States" selected>United States</option>
+                  <option value="New Zealand">New Zealand</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Japan">Japan</option>
+                  <option value="Algeria">Algeria</option>
+                  <option value="Chile">Chile</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main">
+          <div class="row">
+            <ul class="main-nav">
+              <h4 class="main-nav__left">
+                <a class="main-nav__link" href="#">All Categories</a>
+                <i class="fa fa-angle-right"></i>
+              </h4>
+              <span class="main-nav__input">"Yoshi"</span>
+              <li class="main__nav__input">(25 items)</span>
+            </h4>
+            <h4 class="main-nav__right">
+              <span class="main-nav__input">Sort by:</li>
+              <a class="main-nav__link" href="#">Relevancy</a>
+              <i class="fa fa-caret-down results-nav__link--arrow"></i>
+            </h4>
+          </div>
+        </div>
+
+        <div class="products" id="products"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="subscribe">
+          <h4 class="subscribe-heading">
+            Get top trends and fresh editors' picks in your inbox with Etsy Finds.
+          </h4>
+          <form class="subscribe-form" method="post">
+            <input class="subscribe-form__input" type="form-field" name="subscribe" value="" placeholder="Enter your email">
+            <button class="subscribe-form__button">Subscribe</button>
+          </form>
+        </div>
+
+        <div class="footer-row">
+          <div class="footer-col">
+            <h4 class="footer__col-heading">Turn your passion into a business</h4>
+            <button class="footer__link-button">Open a shop</button>
+            <h4 class="footer__link-heading">Sell on Etsy</h4>
+            <h4 class="footer__link-item">
+              <a href="#">Seller handbook</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Etsy credit card reader</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Manufacturing</a>
+            </h4>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer__col-heading">Join the community</h4>
+            <h4 class="footer__link-item">
+              <a href="#">Teams</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Forums</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Upcomin events</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Affiliates</a>
+            </h4>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer__col-heading">Discover and shop</h4>
+            <h4 class="footer__link-item">
+              <a href="#">Gift cards</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Blog</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Tastemakers</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Mobile apps</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Gift registries</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Wholesale</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Search</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Editor's Picks</a>
+            </h4>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer__col-heading">Get to know us</h4>
+            <h4 class="footer__link-item">
+              <a href="#">About</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Policies</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Careers</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Press</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Developers</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">Investors</a>
+            </h4>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer__col-heading">Follow Etsy</h4>
+            <h4 class="footer__link-item">
+              <a href="#">
+                <i class="fa fa-facebook"></i>
+                Facebook</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">
+                <i class="fa fa-twitter"></i>
+                Twitter</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">
+                <i class="fa fa-pinterest"></i>
+                Pinterest</a>
+            </h4>
+            <h4 class="footer__link-item">
+              <a href="#">
+                <i class="fa fa-instagram"></i>
+                Instagram</a>
+            </h4>
+          </div>
+        </div>
+
+        <div class="footer-page-options__row">
+          <div class="footer-page-options">
+            <a href="#">
+              <div class="footer-page-options__button">
+                <h4 class="footer-page-options__button--text">
+                  <i class="fa fa-globe footer-page-options__button--icon"></i>United States
+                </h4>
+              </div>
+            </a>
+          </div>
+          <div class="footer-page-options">
+            <a href="#">
+              <div class="footer-page-options__button">
+                <h4 class="footer-page-options__button--text">
+                  English (US)
+                </h4>
+              </div>
+            </a>
+          </div>
+          <div class="footer-page-options">
+            <a href="#">
+              <div class="footer-page-options__button">
+                <h4 class="footer-page-options__button--text">
+                  $ USD
+                </h4>
+              </div>
+            </a>
+          </div>
+          <div class="footer-page-options">
+            <a href="#">
+              <div class="help-button">
+                <h4 class="help-button__text">
+                  Help
+                </h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="copyright">
+          <span class="copyright-item__copyright">
+            &copy 2016 Etsy, Inc.
+          </span>
+          <span class="copyright-item__link">
+            Legal
+          </span>
+          <span class="copyright-item__link">
+            Privacy
+          </span>
+          <span class="copyright-item__link">
+            Interest-based ads
+          </span>
+
+        </div>
+
+      </div>
+    </div>
+  </footer>
 
   <script src="/app.js" charset="utf-8"></script>
 
   <script type="text/javascript">
     // Starts the application and searches for "Yoshi"
-    searchEtsy(`Yoshi`);
+    start();
   </script>
 </body>
 </html>

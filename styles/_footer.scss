@@ -1,0 +1,164 @@
+.footer {
+  width: 100%;
+  min-height: 85vh;
+  border-top: lighten($brand-gray, 45%) solid 1px;
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.subscribe {
+  width: 100%;
+  margin: $gutter * 2 0;
+  padding: $gutter * 3;
+  border: lighten($brand-gray, 45%) solid 8px;
+  border-radius: $brand-border-radius;
+
+  &-heading {
+    margin: 0;
+    margin-bottom: $gutter;
+    font-family: serif;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+.subscribe-form {
+  text-align: center;
+
+  &__input {
+    width: 20rem;
+    margin-right: $gutter;
+    padding: $gutter;
+    border: lighten($brand-gray, 45%) solid 1px;
+    border-radius: $brand-border-radius;
+    font-size: 1rem;
+    font-weight: 100;
+  }
+
+  &__button {
+    padding: $gutter;
+    border: $brand-light-gray solid 1px;
+    border-radius: $brand-border-radius;
+    background: $brand-light-blue;
+    color: $brand-white;
+    font-size: 1rem;
+  }
+}
+
+.footer-row {
+  display: flex;
+  width: 100%;
+  margin: $gutter * 2;
+  padding-bottom: $gutter * 4;
+  border-bottom: lighten($brand-gray, 45%) solid 1px;
+}
+
+.footer__link {
+
+  &-heading {
+    margin: $gutter;
+    color: $brand-gray;
+    font-size: 0.95rem;
+    font-weight: 100;
+  }
+
+  &-button {
+    margin: 0 $gutter;
+    margin-bottom: $gutter * 2;
+    padding: $gutter / 2 $gutter;
+    border: $brand-light-gray solid 1px;
+    border-radius: $brand-border-radius;
+    background: $brand-light-blue;
+    color: $brand-white;
+    font-size: 1rem;
+  }
+
+  &-item {
+    margin: $gutter;
+    color: $brand-light-blue;
+    font-size: 0.95rem;
+    font-weight: 100;
+  }
+}
+
+.footer-col {
+  width: calc(100% / 5);
+}
+
+.footer-page-options__row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: $gutter * 2;
+}
+
+.footer-page-options {
+  & a {
+
+    &:link {
+      text-decoration: none;
+    }
+  }
+
+  &__button {
+    margin-left: -1px;
+    padding: $gutter;
+    border: lighten($brand-gray, 45%) solid 1px;
+    color: $brand-gray;
+
+    &--icon {
+      margin: -0.3rem $gutter / 2;
+      font-size: 1.2rem;
+    }
+
+    &--text {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 100;
+    }
+
+    &:hover {
+      background: lighten($brand-light-blue, 55%);
+      color: $brand-light-blue;
+    }
+  }
+}
+
+.help-button {
+  margin-left: $gutter * 4;
+  padding: $gutter $gutter * 6;
+  border: lighten($brand-gray, 45%) solid 1px;
+
+  &__text {
+    margin: 0;
+    color: $brand-black;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+}
+
+.copyright {
+  width: 100%;
+  margin: $gutter * 2;
+  color: $brand-gray;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.copyright-item {
+
+  &__copyright {
+    color: lighten($brand-gray, 20%);
+  }
+
+  &__link {
+    margin-left: $gutter * 2;
+  }
+}
